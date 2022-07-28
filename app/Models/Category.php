@@ -13,6 +13,6 @@ class Category extends Model
         'category_desc',
     ];
     public function product(){
-        return $this->hasOne(Product::class);
+        return $this->hasMany(Product::class);
     }
 }
