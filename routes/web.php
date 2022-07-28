@@ -17,3 +17,8 @@ Route::get('/', function () {
     return redirect('/products');
 });
 Route::resource('products',\App\Http\Controllers\ProductController::class);
+
+Route::get('/',function (){
+    return redirect('/categories');
+});
+Route::resource('categories',\App\Http\Controllers\CategoryController::class);
