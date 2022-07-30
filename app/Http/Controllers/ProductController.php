@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\product;
 class ProductController extends Controller
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $categories = Category::all();
+        return view('products.create',compact('categories'));
     }
 
     /**
@@ -37,6 +39,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'category_id'=>'required',
             'product_name'=>'required',
             'product_desc'=>'required',
             'product_qty'=>'required',
@@ -53,7 +56,8 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        return view('products.show',compact('product'));
+        $categories = Category::all();
+        return view('products.show',compact('product'),compact('categories'));
     }
 
     /**
@@ -64,7 +68,8 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        return view('products.edit',compact('product'));
+        $categories = Category::all();
+        return view('products.edit',compact('product'),compact('categories'));
     }
 
     /**

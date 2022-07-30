@@ -37,6 +37,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+
             'category_name'=>'required',
             'category_desc'=>'required',
         ]);
@@ -76,6 +77,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate([
+
             'category_name'=>'required',
             'category_desc'=>'required',
         ]);
