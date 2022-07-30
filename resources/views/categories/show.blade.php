@@ -22,6 +22,22 @@
                 {{ $category->category_desc }}
             </div>
         </div>
+        <table class="table table-bordered">
+            <tr>
+
+                <th>Product Name</th>
+                <th>Product Description</th>
+                <th>Qty.</th>
+            </tr>
+            @foreach($category->products as $product)
+                <tr>
+
+                    <td>{{ $product->product_name }}</td>
+                    <td>{{ $product->product_desc }}</td>
+                    <td>{{ $product->product_qty }}</td>
+                </tr>
+            @endforeach
+        </table>
 
     </div>
 @endsection

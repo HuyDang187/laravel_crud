@@ -10,6 +10,14 @@
                 Add Category
             </a>
         </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center" style="margin-top: 10px;margin-bottom: 10px;">
+            <a class="btn btn-success" href="{{ route('products.index') }}">
+                Product
+            </a>
+        </div>
     </div>
     @if($message = Session::get('success'))
         <div class="alert alert-success">
@@ -20,7 +28,7 @@
     @if(sizeof($categories)>0)
         <table class="table table-bordered">
             <tr>
-                <th>No</th>
+                <th>CategoryCode</th>
                 <th>Category Name</th>
                 <th>Category Description</th>
 

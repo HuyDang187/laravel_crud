@@ -11,6 +11,13 @@
             </a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12 text-center" style="margin-top: 10px;margin-bottom: 10px;">
+            <a class="btn btn-success" href="{{ route('categories.index') }}">
+                Category
+            </a>
+        </div>
+    </div>
     @if($message = Session::get('success'))
         <div class="alert alert-success">
             {{ $message }}
@@ -24,6 +31,7 @@
                 <th>Product Name</th>
                 <th>Product Description</th>
                 <th>Qty.</th>
+
                 <th width="280px">More</th>
             </tr>
             @foreach($products as $product)
@@ -32,6 +40,7 @@
                     <td>{{ $product->product_name }}</td>
                     <td>{{ $product->product_desc }}</td>
                     <td>{{ $product->product_qty }}</td>
+
                     <td>
                         <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
